@@ -6,8 +6,11 @@
   <title>Lab 3 Simple Tip Calculator</title>
 </head>
   <div class container>
-    <form id="TipCalForm">
-      <label for="BTotal">Bill Total</label>
+    <form id="tipCalForm">
+      <label for="bTotal">Bill Total</label>
+      <input type="text" id="billTotal" name="billTotal" required>
+      <label for="tip">Tip Percentage: <span id="tipPerValue">0%</span></label>
+      <input type="range" id="tip" name="tip" min="0" max="100">
     </form>
   </div>
 <body>
