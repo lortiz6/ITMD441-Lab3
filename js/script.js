@@ -6,25 +6,21 @@ document.addEventListener("DOMContentLoaded", function() {
   const totalWithTip = document.getElementById("totalWithTip");
   const tipPercentageValue = document.getElementById("tipPercentageValue");
   form.addEventListener("input", function () {
-      const billTotalValue = parseFloat(billTotal.value);
-      const tipPercentage = parseFloat(tipSlider.value);
-      if (isNaN(billTotalValue)) {
-          tipAmount.value = "0.00";
-          totalWithTip.value = "0.00";
-          tipPercentageValue.textContent = "0%";
-      } else {
-          const tipAmountValue = (billTotalValue * tipPercentage) / 100;
-          const totalWithTipValue = billTotalValue + tipAmountValue;
-          tipPercentageValue.textContent = tipPercentage + "%";
-          tipAmount.value = tipAmountValue.toFixed(2);
-          totalWithTip.value = totalWithTipValue.toFixed(2);
-      }
+    const billTotalValue = parseFloat(billTotal.value);
+    const tipPercentage = parseFloat(tipSlider.value);
+    if (isNaN(billTotalValue)) {
+      billTotal.setCustomValidity("Please enter a valid number.");
+    } else {
+      billTotal.setCustomValidity(""); // Clear any previous error message
+      const tipAmountValue = (billTotalValue * tipPercentage) / 100;
+      const totalWithTipValue = billTotalValue + tipAmountValue;
+      tipPercentageValue.textContent = tipPercentage + "%";
+      tipAmount.value = tipAmountValue.toFixed(2);
+      totalWithTip.value = totalWithTipValue.toFixed(2);
+    }
+    billTotal.reportValidity();
   });
-  billTotal.addEventListener("input", function () {
-      if (isNaN(billTotal.value)) {
-          billTotal.setCustomValidity("Please enter a valid number for Bill Total.");
-      } else {
-          billTotal.setCustomValidity("");
-      }
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
   });
 });
