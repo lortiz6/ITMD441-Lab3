@@ -17,3 +17,6 @@ input[type="text"][disabled] {
   background-color: #eee;
   font-weight: bold;
 }
+label {
+  display: block;
+}
