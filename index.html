@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
     <title>Tip Calculator</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="js/script.js"></script>
   </head>
   <body>
     <div class="container">
-      <p>ITMD 441 - Lab 3 - Liliana Ortiz</p>
-      <h1>Tip Calculator</h1>
-      <form id="tipCalculatorForm">
-        <label for="billTotal">Bill Total</label>
-        <input type="text" id="billTotal" name="billTotal" required>
-        <label for="tip">Tip Percentage: <span id="tipPercentageValue"></span></label>
-        <input type="range" id="tip" name="tip" min="0" max="100">
-        <label for="tipAmount">Tip Amount</label>
-        <input type="text" id="tipAmount" name="tipAmount" disabled>
-        <label for="totalWithTip">Total Bill with Tip</label>
-        <input type="text" id="totalWithTip" name="totalWithTip" disabled>
-      </form>
+      <header>
+        <p>ITMD 441 - Lab 3 - Liliana Ortiz</p>
+        <h1 class="border">Tip Calculator</h1>
+      </header>
+      <main>
+        <form id="tipCalculatorForm">
+          <label for="billTotal">Bill Total</label>
+          <input type="text" id="billTotal" name="billTotal" required>
+          <label for="tip">Tip Percentage: <span id="tipPercentageValue"></span></label>
+          <input type="range" id="tip" name="tip" min="0" max="100">
+          <label for="tipAmount">Tip Amount</label>
+          <input type="text" id="tipAmount" name="tipAmount" disabled>
+          <label for="totalWithTip">Total Bill with Tip</label>
+          <input type="text" id="totalWithTip" name="totalWithTip" disabled>
+        </form>
+      </main>
+      <footer>
+        <p>It's better to give than to receive!</p>
+      </footer>
     </div>
   </body>
 </html>
