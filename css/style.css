@@ -46,6 +46,15 @@ input[type="text"][disabled] {
 label {
   display: block;
 }
+.emoji-slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10px;
+}
+.emoji {
+  font-size: 40px;
+}
 @media (max-width: 600px) {
   .container {
     max-width: 65%;
@@ -83,8 +92,13 @@ label {
     font-size: 20px;
     font-weight: bold;
   }
-  input[type="text"],
-  input[type="range"] {
-    width: 90%;
+  .emoji-slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+  }
+  .emoji {
+    font-size: 36px;
   }
 }

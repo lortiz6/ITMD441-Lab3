@@ -5,7 +5,9 @@ document.addEventListener("DOMContentLoaded", function() {
   const tipAmount = document.getElementById("tipAmount");
   const totalWithTip = document.getElementById("totalWithTip");
   const tipPercentageValue = document.getElementById("tipPercentageValue");
-  form.addEventListener("input", function () {
+  const emoji = document.getElementById("emoji");
+
+  form.addEventListener("input", function() {
     const billTotalValue = parseFloat(billTotal.value);
     const tipPercentage = parseFloat(tipSlider.value);
     if (isNaN(billTotalValue)) {
@@ -18,9 +20,23 @@ document.addEventListener("DOMContentLoaded", function() {
       tipAmount.value = tipAmountValue.toFixed(2);
       totalWithTip.value = totalWithTipValue.toFixed(2);
     }
+    emoji.textContent = getEmojiForPercentage(tipPercentage);
     billTotal.reportValidity();
   });
-  form.addEventListener("submit", function (event) {
+
+  form.addEventListener("submit", function(event) {
     event.preventDefault();
   });
+
+  function getEmojiForPercentage(percentage) {
+    if (percentage <= 25) {
+      return "😊";
+    } else if (percentage <= 50) {
+      return "😯";
+    } else if (percentage <= 75) {
+      return "😍";
+    } else {
+      return "🤯";
+    }
+  }
 });
